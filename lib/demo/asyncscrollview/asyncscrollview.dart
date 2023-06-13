@@ -27,7 +27,7 @@ class AsyncScrollViewDemoState extends State<AsyncScrollViewDemo> {
         appBar: AppBar(title: Text(nameOf(#AsyncScrollViewDemo))),
         body: Column(children: [
           CupertinoButton(child: const Text("Add"), onPressed: ()=> setState(() {
-            _addItems();
+            _addItems(_informations.length);
           })),
           Expanded(
             child: ListView.builder(
@@ -40,13 +40,13 @@ class AsyncScrollViewDemoState extends State<AsyncScrollViewDemo> {
         ]));
   }
 
-  void _addItems( ) {
+  void _addItems(int lastIndex) {
     var rand = math.Random();
     for (var i = 0; i < 10; i++) {
       var id = i + rand.nextInt(0x7fffffff);
       _informations.add(Information(
-          name: "Name $i",
-          description: "Description $id",
+          name: "Name ${lastIndex + i + 1}",
+          description: "Description: Id $id",
           url: "https://www.google.com",
           imagePath: "https://picsum.photos/320/320?random=$id"
       ));
