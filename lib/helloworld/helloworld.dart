@@ -7,7 +7,6 @@ class HelloWorld extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlueAccent,
       appBar:AppBar(title: Text(nameOf(#HelloWorld))),
       body: const Center(
         child: Text('Hello, world!'),

@@ -11,12 +11,12 @@ class MainMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white60,
       appBar: AppBar(title: const Text("Menu"),),
       body: SingleChildScrollView(
           child: Column(children:[
             buildMenuItem(context, ScreenName.helloWorld),
             buildMenuItem(context, ScreenName.asyncscriollview),
+            buildMenuItem(context, ScreenName.tabview),
           ]
           )),
     );
@@ -26,12 +26,11 @@ class MainMenu extends StatelessWidget {
     return SizedBox(
         width: screenWidth(context),
         height: 50,
-        child: CupertinoButton.filled(
+        child: TextButton(
           onPressed: () {
             Navigator.pushNamed(context, item.value);
           },
           child: Text(item.value),
-          borderRadius: BorderRadius.zero,
         )
     );
   }

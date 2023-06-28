@@ -1,6 +1,5 @@
 import 'dart:math' as math;
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:learning_flutter/demo/asyncscrollview/cellview.dart';
 
@@ -18,15 +17,14 @@ class AsyncScrollViewDemo extends StatefulWidget {
 
 class AsyncScrollViewDemoState extends State<AsyncScrollViewDemo> {
 
-  List<Information> _informations = [];
+  final List<Information> _informations = [];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.lightBlueAccent,
         appBar: AppBar(title: Text(nameOf(#AsyncScrollViewDemo))),
         body: Column(children: [
-          CupertinoButton(child: const Text("Add"), onPressed: ()=> setState(() {
+          TextButton(child: const Text("Add"), onPressed: ()=> setState(() {
             _addItems(_informations.length);
           })),
           Expanded(
